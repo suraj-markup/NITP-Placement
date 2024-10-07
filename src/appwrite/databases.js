@@ -1,4 +1,4 @@
-import {createAdminClient, createSessionClient,DATABASE_ID,COMPANIES_COLLECTION_ID,STUDENTS_COLLECTION_ID} from './appwrite';
+import {createAdminClient, createSessionClient,DATABASE_ID,COMPANIES_COLLECTION_ID,STUDENTS_COLLECTION_ID,databases} from './appwrite';
 import {ID} from 'appwrite';
 
 const db={};

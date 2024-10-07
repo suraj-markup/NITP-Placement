@@ -20,12 +20,13 @@ const auth = {
     },
 
     createSession: async (formData) => {
+        
         "use server";
-
+        // try{
         const data = Object.fromEntries(formData);
         const { email, password } = data;
         const { account } = await createAdminClient();
-
+        
         const session = await account.createEmailPasswordSession(
             email,
             password
@@ -40,6 +41,10 @@ const auth = {
         });
 
         redirect("/admin");
+        // return true;
+    // } catch (error) {
+    //     return false;
+    // }
     },
 
     deleteSession: async () => {
