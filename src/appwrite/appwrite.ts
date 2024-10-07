@@ -8,6 +8,13 @@ export const STUDENTS_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTIO
 // export const BUCKET_ID = import.meta.env.VITE_APPWRITE_BUCKET_ID;
 
 
+const client=new Client();
+client
+.setEndpoint(ENDPOINT_URL||``)
+.setProject(PROJECT_ID||``)
+
+const account = new Account(client);
+const databases = new Databases(client);
 
 
 const createAdminClient= async () =>{
@@ -49,4 +56,4 @@ const createSessionClient= async (session: string) =>{
 };
 
 
-export { createAdminClient, createSessionClient};
+export {client,account,databases, createAdminClient, createSessionClient};
