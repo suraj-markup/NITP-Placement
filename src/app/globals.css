@@ -14,7 +14,11 @@
   }
 }
 
+html{
+  cursor: none;
+}
 body {
+  cursor: none; 
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;

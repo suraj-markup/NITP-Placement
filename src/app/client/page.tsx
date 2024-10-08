@@ -16,6 +16,8 @@ interface Company {
   company_logo?: string;
   CTC?: string;
   job_type: string;
+  desc:string;
+  Roles:string;
 }
 
 const companyData = [
@@ -23,7 +25,7 @@ const companyData = [
     $id: "1",
     company_name: "Google",
     company_logo:
-      "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      "https://cloud.appwrite.io/v1/storage/buckets/67043ebb003a3cfe5385/files/67043edd0028941d441b/view?project=66fc3cdf003e045ca11d&project=66fc3cdf003e045ca11d&mode=admin",
     CTC: "₹1,00,000",
     job_type: "Full Time",
   },
@@ -53,7 +55,8 @@ const companyData = [
   {
     $id: "5",
     company_name: "Amazon",
-    company_logo:"http://pngimg.com/uploads/amazon/amazon_PNG11.png",
+    company_logo:     "https://cloud.appwrite.io/v1/storage/buckets/67043ebb003a3cfe5385/files/67043eef0034765b7c5c/view?project=66fc3cdf003e045ca11d&project=66fc3cdf003e045ca11d&mode=admin",
+
     CTC: "₹1,00,000",
     job_type: "Full Time",
   },
@@ -142,19 +145,19 @@ export default function Home() {
   return (
     <div className="h-auto text-black ">
       <div className="flex flex-wrap flex-col items-center justify-center w-8/12 m-auto">
-        <h1 className="font-bold text-5xl my-5">Our Recruiters</h1>
+        <h1 className="font-bold text-5xl my-5">Our <span className="text-yellow-600 ">Recruiters </span></h1>
         <p className="text-center w-8/12 text-lg mb-5">
         We take pride in our vibrant network of recruiters who consistently seek out and hire our talented students each year. Discover some of the top companies that actively recruit our students!
         </p>
         <div className="w-9/12 p-5 flex justify-between m-auto rounded-xl gap-x-2 bg-[#F3F3F3] my-5">
 
         <input type="search" placeholder="Search here ... "value={searchvalue}  onChange={handleChange} className=" bg-[#F3F3F3] border-b-[#D8D8D8] border-b-2 border-solid w-10/12 p-1"/>
-        <button className="bg-[#D8D8D8] p-2 rounded-xl w-24" onClick={handleSearch}>
+        <button className="bg-yellow-600 text-white p-2 rounded-xl w-24" onClick={handleSearch}>
         Search
         </button>
         </div>
 
-        <div className="flex flex-wrap flex-row p-5 m-auto justify-center">
+        <div className="flex flex-wrap flex-row p-5 m-auto justify-center gap-5">
         {newData.length > 0 ? (
           newData.map((company) => (
             <>
@@ -183,7 +186,7 @@ export default function Home() {
             </>
           ))
         ) : (
-          <p>Loading company data...</p>
+          <p>Nothing to show...</p>
         )}
       </div>
       </div>

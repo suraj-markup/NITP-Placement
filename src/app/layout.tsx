@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
-
+import Footer from "./Components/Footer";
+import { NextUIProvider } from "@nextui-org/react";
+import DotCursor from "./Components/DotCursor";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -28,11 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`} 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-black bg-[linear-gradient(#cccccc33_1px,transparent_1px),linear-gradient(90deg,#cccccc33_1px,transparent_1px)] bg-[size:20px_20px] text-black`}
       >
-      <Navbar />
-
-        {children}
+         <DotCursor />
+        <NextUIProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextUIProvider>
       </body>
     </html>
   );
